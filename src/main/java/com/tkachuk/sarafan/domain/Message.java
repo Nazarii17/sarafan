@@ -1,14 +1,16 @@
 package com.tkachuk.sarafan.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table
-@ToString(of = {"id", "text"})
-@EqualsAndHashCode(of = {"id"})
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+//@ToString(of = {"id", "text"})
+//@EqualsAndHashCode(of = {"id"})
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
