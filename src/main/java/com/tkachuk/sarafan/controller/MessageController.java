@@ -1,6 +1,8 @@
 package com.tkachuk.sarafan.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import com.tkachuk.sarafan.domain.Message;
+import com.tkachuk.sarafan.domain.Views;
 import com.tkachuk.sarafan.repository.MessageRepo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,7 @@ public class MessageController {
     }
 
     @GetMapping
+    @JsonView(Views.IdName.class)
     public List<Message> list() {
         return messageRepo.findAll();
     }
